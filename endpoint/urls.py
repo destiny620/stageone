@@ -3,7 +3,8 @@ from .views import DesView
 
 
 
+
 urlpatterns = [
-   
-    path('apidetail', DesView.as_view(), name="home")
+    path('api', DesView.as_view(), name="home"),
 ]
+

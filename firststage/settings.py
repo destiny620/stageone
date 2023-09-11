@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'endpoint.apps.EndpointConfig',
-    # 'endpoint',
+    # 'endpoint.apps.EndpointConfig',
+    'endpoint',
     'rest_framework'
 ]
 
@@ -128,4 +128,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# router = DefaultRouter(trailing_slash=False)
 
+APPEND_SLASH = False
+
+
+{
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+    }
+}
