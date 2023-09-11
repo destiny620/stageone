@@ -5,22 +5,33 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import EndpointSerializer
 from .models import Endpoint
+from django.http import JsonResponse
+
 
 
 # Create your views here.
+
+
+
+
 
 class DesView(APIView):
 
     def get(self, request, *args, **kwargs):
 
         api_uls = {
-        'all_items': 'all',
-		'Search by Slack': '?slack_name=slack_name',
-		'Search by Track': '?track=track',
+        'all_items': 'api',
+		'Search by Slack': '/?slack_name=slack_name',
+		'Search by Track': '/?track=track',
         }
         return Response(api_uls)
+    
 
     def get(self, request, *args, **kwargs):
         query = Endpoint.objects.all()
         serializers = EndpointSerializer(query, many=True)
+       
+       
         return Response(serializers.data)
+    
+   
