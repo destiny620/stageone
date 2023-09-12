@@ -24,7 +24,7 @@ class DesView(APIView):
 		'Search by Slack': '/?slack_name=slack_name',
 		'Search by Track': '/?track=track',
         }
-        return JsonResponse(api_uls, safe=False)
+        return Response(api_uls, safe=False)
     
 
     def get(self, request, *args, **kwargs):
@@ -32,6 +32,6 @@ class DesView(APIView):
         serializers = EndpointSerializer(query, many=True)
        
        
-        return JsonResponse(serializers.data, safe=False)
+        return Response(serializers.data, safe=False)
     
    
