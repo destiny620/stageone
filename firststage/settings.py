@@ -138,3 +138,10 @@ APPEND_SLASH = False
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
     }
 }
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES':
+    (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+}
