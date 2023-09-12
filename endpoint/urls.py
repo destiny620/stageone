@@ -8,3 +8,4 @@ urlpatterns = [
     path('api', DesView.as_view(), name="home"),
 ]
 
+
